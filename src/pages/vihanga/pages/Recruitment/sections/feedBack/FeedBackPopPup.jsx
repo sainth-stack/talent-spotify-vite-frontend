@@ -4,7 +4,7 @@ import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import { LinearProgress, Typography, Box, Grid } from "@mui/material";
 import { formatDate } from "../../../../../../utils";
 
@@ -71,11 +71,10 @@ const StatusCell = ({ row }) => {
 };
 
 const FeedBackPopPup = ({ isOpen, setIsOpen, popupTitle, PoupData }) => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleViewDetails = (row) => {
-    history.push({
-      pathname: `/admin/previlages/candidate/create/${row?.candidateId}`,
+    navigate(`/admin/previlages/candidate/create/${row?.candidateId}`, {
       state: { candidateData: row },
     });
   };

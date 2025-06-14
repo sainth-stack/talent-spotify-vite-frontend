@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardContent, Box, Typography } from "@mui/material";
 import moment from "moment";
-import ActionDropdown from "pages/vihanga/components/ActionDropdown/ActionDropdown";
+import ActionDropdown from  "../../components/ActionDropdown/ActionDropdown";
 import BorderColorIcon from "@mui/icons-material/BorderColor";
 import DeleteIcon from "@mui/icons-material/Delete";
 

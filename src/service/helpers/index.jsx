@@ -8,6 +8,7 @@ import previlageReducer from "../../reducer/privilegesGroup"
 import { Toast } from './../toast';
 import { api } from './../../utilities/api';
 // export const store = createStore(reducers, applyMiddleware(thunk.withExtraArgument({api, Toast})));
+import { createBrowserHistory } from "history"
 
 export const store2 = configureStore({
   reducer: {
@@ -26,7 +27,7 @@ export const store2 = configureStore({
     }),
 })
 
-export const history = require("history").createBrowserHistory();
+export const history = createBrowserHistory(); 
 
 let routerCache = {};
 

@@ -1,14 +1,23 @@
-import { NotificationManager } from "react-notifications";
-import "react-notifications/lib/notifications.css";
+// toast.js
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const Toast = ({ type = "success", message, time = 4000 }) => {
-  if (Array.isArray(message)) {
-    let item;
+  const config = {
+    position: "top-right",
+    autoClose: time,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "light",
+  };
 
-    for (item of message) {
-      NotificationManager[type](item.message, "", parseInt(time));
-    }
+  if (Array.isArray(message)) {
+    message.forEach((item) => {
+      toast[item.type || type](item.message, config);
+    });
   } else {
-    NotificationManager[type](message, "", parseInt(time));
+    toast[type](message, config);
   }
 };

@@ -2,11 +2,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import RecruitmentManagement from "./pages/vihanga/pages/Recruitment/index";
 import NotFoundPage from "./NotFoundPage";
+import ApplyforLeave from './pages/vihanga/pages/employeePortal/absencetimeoff/applyforLeave/index';
 
 const router = createBrowserRouter([
   {
     path: "/",
-     element: <RecruitmentManagement />,
+     element: <ApplyforLeave />,
   },
   {
     path: "*",

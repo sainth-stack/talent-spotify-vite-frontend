@@ -14,7 +14,7 @@ import {
   Add as AddIcon,
   SystemUpdateAltOutlined as ExportIcon,
 } from "@mui/icons-material";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import { saveAs } from "file-saver";
 import * as XLSX from "xlsx";
 import jsPDF from "jspdf";
@@ -42,7 +42,7 @@ const TableHeader3 = ({
   filteredData,
   handleCascade
 }) => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [exportAnchorEl, setExportAnchorEl] = useState(null);
   const [statusAnchorEl, setStatusAnchorEl] = useState(null);
   const [displayAnchorEl, setDisplayAnchorEl] = useState(null);
@@ -408,7 +408,7 @@ const TableHeader3 = ({
               color: "#FFFFFF",
             },
           }}
-          onClick={() => history.push("/admin/objectives/objective")}
+          onClick={() => navigate("/admin/objectives/objective")}
         >
           Create OKR
         </Button>
