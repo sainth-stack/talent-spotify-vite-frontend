@@ -42,7 +42,11 @@ const router = createBrowserRouter([
       {
         path: "recruitment/candidate/create",
         element: <CandidateCreate />
-      }
+      },
+      {
+        path: "recruitment/candidate/create/:candidateId", 
+        element: <CandidateCreate />
+      },
       // Add more admin child routes here
     ]
   },

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useParams,useLocation } from 'react-router-dom';
 import CircularProgress from "@mui/material/CircularProgress";
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import {
@@ -25,7 +25,7 @@ import { getDepartmentsData } from "../../../../../../action/DepartmentAct";
 import { useDispatch } from "react-redux";
 
 import html2pdf from "html2pdf.js";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import { hiringOptions } from  "../../../../../../utils/const";
 
 
@@ -129,10 +129,17 @@ const CandidateDetailsForm = ({ id, setStatus }) => {
   }, []);
 
   
+  // console.log("candidateId",candidateId)
+  // const candidateDataFromState = location.state?.candidateData;
+  // const Candidate_Id = candidateDataFromState ? candidateDataFromState.candidateId : null;
 
-  const candidateDataFromState = location.state?.candidateData;
-  const Candidate_Id = candidateDataFromState ? candidateDataFromState.candidateId : null;
-  const candidateId = Candidate_Id || id;
+  const candidateDataFromState = location.state?.candidateData || null;
+  console.log("candidateDataFromState",candidateDataFromState)
+  const { candidateId: routeCandidateId } = useParams();
+  const candidateId = candidateDataFromState?.candidateId || routeCandidateId;
+console.log("candidateId",candidateId)
+  
+
 
   useEffect(() => {
     if (candidateId) {

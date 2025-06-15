@@ -73,11 +73,15 @@ const StatusCell = ({ row }) => {
 const FeedBackPopPup = ({ isOpen, setIsOpen, popupTitle, PoupData }) => {
   const navigate = useNavigate();
 
+ 
+
   const handleViewDetails = (row) => {
-    navigate(`/admin/previlages/candidate/create/${row?.candidateId}`, {
+    console.log("row",row)
+    navigate(`/admin/recruitment/candidate/create/${row?.candidateId}`, {
       state: { candidateData: row },
     });
   };
+  
 
   return (
     <Dialog

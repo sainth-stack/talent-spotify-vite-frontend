@@ -16,8 +16,9 @@ const [status,setStatus]=useState("New Applied")
     { label: "Offer",step:5 ,value:["Shortlisted","Offer Letter"]},
     { label: "Onboarding",step:6,value:"Onboarding" },
   ];
-  const { id } = useParams();
+  const { candidateId:id  } = useParams();
 
+  console.log("id",id)
   useEffect(()=>{
 if(status){
   const step2=steps.filter((item)=>{

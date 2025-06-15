@@ -384,7 +384,7 @@ export const CandidateTable = ({ onEdit, onCandidateDelete }) => {
     handleClose();
    
     navigate(
-      `/admin/previlages/candidate/create/${selectedRow?.candidateId}`
+      `candidate/create/${selectedRow?.candidateId}`
     );
   };
 
