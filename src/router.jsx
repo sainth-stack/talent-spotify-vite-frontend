@@ -12,6 +12,11 @@ import RecruitmentManagement from "./pages/vihanga/pages/Recruitment";
 import ApplyforLeave from "./pages/vihanga/pages/employeePortal/absencetimeoff/applyforLeave";
 import NotFoundPage from "./NotFoundPage";
 import CandidateCreate from './pages/vihanga/pages/Recruitment/sections/candidateDetails/index';
+import WeeklyLeaveManagement from './pages/vihanga/pages/employeePortal/WeeklyTime/index';
+import CalendarPage from "./pages/vihanga/pages/employeePortal/TeamLeave";
+import TimeSheetHistory from "./pages/vihanga/pages/employeePortal/TimeTracking/timeSheetHistiory";
+import LeaveType from "./pages/vihanga/pages/AdminPortal/LeaveType";
+import EligibilityCriteria from "./pages/vihanga/pages/AdminPortal/EligibilityCriteria";
 
 // Auth Pages (example)
 
@@ -47,6 +52,45 @@ const router = createBrowserRouter([
         path: "recruitment/candidate/create/:candidateId", 
         element: <CandidateCreate />
       },
+      {
+        path: "previlages/apply-leave",
+        element: <ApplyforLeave />
+
+       
+      },
+      {
+        path: "previlages/time-tracking",
+        element: <WeeklyLeaveManagement />
+
+
+      },
+      {
+        path: "previlages/team-leave",
+        element: <CalendarPage />
+
+
+      },
+      {
+        path: "previlages/time-history",
+        element: <TimeSheetHistory />
+
+
+      },
+      {
+        path: "previlages/leave-type",
+        element: <LeaveType />
+
+
+      },
+      {
+        path: "previlages/eligibility",
+        element: <EligibilityCriteria />
+
+
+      },
+      
+      
+      
       // Add more admin child routes here
     ]
   },

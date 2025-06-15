@@ -6,17 +6,17 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import CustomCheckBoxSwitch from "pages/vihanga/components/CustomCheckSwitch";
-import { SelectComponent } from "pages/vihanga/components/input-elements/select";
-import { InputTextComponent } from "pages/vihanga/components/input-elements/text";
+import CustomCheckBoxSwitch from  "../../../components/CustomCheckSwitch";
+import { SelectComponent } from "../../../components/input-elements/select";
+import { InputTextComponent } from "../../../components/input-elements/text";
 import React, { useCallback, useState, useRef, useEffect } from "react";
 
 import CarryoverRulesPopup from "../EligibilityCriteria/CarryoverRulesPopup";
 import LeaveTypeTable from "./LeaveTypeTable";
 import { appURL } from "../../../../../utilities/baseurl";
 import axios from "axios";
-import { Toast } from "service/toast";
-import CustomRadio from "pages/vihanga/components/CustomRadio";
+import { Toast } from "../../../../../service/toast";
+import CustomRadio from  "../../../components/CustomRadio";
 
 const LeaveType = () => {
   const generateCandidateId = () => {

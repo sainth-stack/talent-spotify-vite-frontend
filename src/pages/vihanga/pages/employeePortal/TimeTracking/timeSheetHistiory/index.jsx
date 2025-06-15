@@ -8,9 +8,9 @@ import {
   useTheme,
 } from "@mui/material";
 import LeaveTable4 from "./table";
-import CustomMap from "pages/vihanga/components/MapView/CustomMap";
-import CustomSwitchButton from "pages/vihanga/components/SwitchButton/CustomSwitch";
-import CustomButton from "pages/vihanga/components/Button/CustomButton";
+import CustomMap from "../../../../components/MapView/CustomMap";
+import CustomSwitchButton from "../../../../components/SwitchButton/CustomSwitch";
+import CustomButton from "../../../../components/Button/CustomButton";
 
 const TimeSheetHistory = () => {
   const theme = useTheme();

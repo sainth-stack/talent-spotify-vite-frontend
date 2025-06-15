@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Box, Typography } from "@mui/material";
-import { InputTextComponent } from "pages/vihanga/components/input-elements/text";
-import CustomCheckBoxSwitch from "pages/vihanga/components/CustomCheckSwitch";
-import { SelectComponent } from "pages/vihanga/components/input-elements/select";
+import { InputTextComponent } from  "../../../components/input-elements/text";
+import CustomCheckBoxSwitch from  "../../../components/CustomCheckSwitch";
+import { SelectComponent } from  "../../../components/input-elements/select";
 
 const CarryoverRulesPopup = ({ anchorEl, handleClose }) => {
   const open = Boolean(anchorEl);

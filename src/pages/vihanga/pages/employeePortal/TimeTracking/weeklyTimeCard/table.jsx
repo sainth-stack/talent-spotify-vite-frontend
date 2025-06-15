@@ -11,8 +11,8 @@ import {
   useTheme,
 } from "@mui/material";
 import SwapVertIcon from "@mui/icons-material/SwapVert";
-import CustomSwitchButton from "pages/vihanga/components/SwitchButton/CustomSwitch";
-import MobileLeaveCard from "pages/vihanga/components/MobileLeaveCard/MobileLeaveCard";
+import CustomSwitchButton from "../../../../components/SwitchButton/CustomSwitch";
+import MobileLeaveCard from "../../../../components/MobileLeaveCard/MobileLeaveCard";
 
 const LeaveTable2 = () => {
 

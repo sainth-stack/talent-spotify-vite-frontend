@@ -7,18 +7,18 @@ import {
   Typography,
 } from "@mui/material";
 
-import CustomRadio from "pages/vihanga/components/CustomRadio";
-import { SelectComponent } from "pages/vihanga/components/input-elements/select";
-import { InputTextComponent } from "pages/vihanga/components/input-elements/text";
+import CustomRadio from "../../../components/CustomRadio";
+import { SelectComponent } from "../../../components/input-elements/select";
+import { InputTextComponent } from "../../../components/input-elements/text";
 
 import React, { useEffect, useState } from "react";
 import EligibilityTable from "./EligibilityTable";
 import axios from "axios";
-import { Toast } from "service/toast";
+import { Toast } from "../../../../../service/toast";
 import { useCallback } from "react";
 import { appURL, removeDuplicates } from "utilities";
-import { getDesignations } from "action/DesignationAct";
-import { getDepartmentsData } from "action/DepartmentAct";
+import { getDesignations } from "../../../../../action/DesignationAct";
+import { getDepartmentsData } from "../../../../../action/DepartmentAct";
 import { useDispatch } from "react-redux";
 import { getItemFromLocalStorage } from "utilities/getLocalStorageItem";
 

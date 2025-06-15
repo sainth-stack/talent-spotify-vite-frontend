@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import CustomTable from "../../../../components/CustomTable/index";
 import { attendanceWeekly} from "./data";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { IconButton,Box, Typography,Button,useTheme,
 useMediaQuery} from "@mui/material";
 import SwapVertIcon from '@mui/icons-material/SwapVert';
-import MobileLeaveCard from "pages/vihanga/components/MobileLeaveCard/MobileLeaveCard";
+import MobileLeaveCard from  "../../../../components/MobileLeaveCard/MobileLeaveCard";
 
 const getStatusColor = (status) => {
     switch (status) {

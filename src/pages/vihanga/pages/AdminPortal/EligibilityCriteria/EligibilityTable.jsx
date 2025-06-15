@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import CustomTable from "pages/vihanga/components/CustomTable";
+import CustomTable from "../../../components/CustomTable";
 import {
   Box,
   Stack,
@@ -13,7 +13,7 @@ import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import DeleteIcon from "@mui/icons-material/Delete";
 import axios from "axios";
 import { appURL } from "../../../../../utilities/baseurl";
-import { Toast } from "service/toast";
+import { Toast } from "../../../../../service/toast";
 import { exportToCSV, exportToExcel, exportToPDF } from "utilities/ExportFunctions";
 
 const EligibilityTable = ({ onEdit, refreshTable }) => {

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, MenuItem, Select, Typography } from "@mui/material";
-import CustomSwitchButton from "pages/vihanga/components/SwitchButton/CustomSwitch";
+import CustomSwitchButton from "../../../components/SwitchButton/CustomSwitch";
 import EventCalendar from "../../../components/EventSchedular/EventSchedular";
-import { customColors } from "pages/vihanga/components/EventSchedular/data";
+import { customColors } from  "../../../components/EventSchedular/data";
 import TableHeader2 from "../../objectives/tableHeader";
 import { appURL } from "utilities";
 import axios from "axios";
