@@ -606,7 +606,7 @@ export const CandidateTable = ({ onEdit, onCandidateDelete }) => {
               color={"#fff"}
               backgroundColor={"#85803c"}
               onClick={() => {
-                navigate("candidate/create"); 
+                navigate("/admin/recruitment/candidate/create"); 
               }}  
               sx={{
                 margin: "0 0 .3rem .5rem",

@@ -1,4 +1,4 @@
-import Stepper from "pages/vihanga/components/stepper";
+import Stepper from "../../../../components/stepper";
 import React, { useEffect, useState } from "react";
 import { Card } from "@mui/material";
 import CandidateDetailsForm from "./form";

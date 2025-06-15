@@ -5,9 +5,9 @@ import {
   StepLabel as MuiStepLabel,
   StepConnector,
   Grid,
-  Box,
-  StepIconProps,
+  Box
 } from "@mui/material";
+import StepIcon from '@mui/material/StepIcon';
 import { styled } from "@mui/material/styles";
 
 const Stepper = ({

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import CircularProgress from "@mui/material/CircularProgress";
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import {
@@ -18,16 +18,15 @@ import AddIcon from '../../../../../../assets/svg/addIcon.svg'
 import FileUploadCustom from "../../../../components/filesUplode/draganddropFile";
 import InterviewerCard from "./fotter";
 import axios from "axios";
-import { Toast } from "service/toast";
+import { Toast } from "../../../../../../service/toast";
 import { appURL, PsychometricURL, removeDuplicates, UiURL } from "utilities";
-import { getDesignations } from "action/DesignationAct";
-import { getDepartmentsData } from "action/DepartmentAct";
+import { getDesignations } from  "../../../../../../action/DesignationAct";
+import { getDepartmentsData } from "../../../../../../action/DepartmentAct";
 import { useDispatch } from "react-redux";
-import Departments from "pages/Setup/Departments";
 
 import html2pdf from "html2pdf.js";
 import { useLocation } from "react-router-dom";
-import { hiringOptions } from "pages/vihanga/utils/const";
+import { hiringOptions } from  "../../../../../../utils/const";
 
 
 const CandidateDetailsForm = ({ id, setStatus }) => {
@@ -259,12 +258,12 @@ const CandidateDetailsForm = ({ id, setStatus }) => {
     }
   };
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const onBack = () => {
-    history.push({
-      pathname: "/admin/previlages/RecruitmentManagement",
-    });
+  
+      navigate( "/admin/previlages/RecruitmentManagement")
+   
   };
 
   const handleInputChange = (e) => {
@@ -342,9 +341,9 @@ const CandidateDetailsForm = ({ id, setStatus }) => {
       });
 
       setLoading(false)
-      history.push({
-        pathname: "/admin/previlages/RecruitmentManagement",
-      });
+     
+       navigate( "/admin/previlages/RecruitmentManagement")
+     
     } catch (error) {
       setLoading(false)
       Toast({ 

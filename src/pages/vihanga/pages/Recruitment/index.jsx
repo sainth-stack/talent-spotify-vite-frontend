@@ -6,7 +6,9 @@ import RecuitementTable from "./sections/section1";
 const RecruitmentManagement = () => {
   return (
     <>
-      <Box sx={{ display: "flex", height: "100vh" }}>
+      <Box sx={{
+        display: "flex", height: "100vh",
+     }}>
         <Box
           sx={{
             flexGrow: 1,

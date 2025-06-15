@@ -3,7 +3,7 @@ import { Avatar, Typography, Box, Button } from "@mui/material";
 import { styled } from "@mui/system";
 import interviewerImage from "../../../../../../assets/images/formprofile.png";
 import interviewerImage2 from "../../../../../../assets/images/femaleForm2.png"
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const StyledBox = styled(Box)({
   display: "flex",
@@ -29,7 +29,7 @@ const ActionsBox = styled(Box)({
 
 
 const InterviewerCard = ({ formData,employeeOptions }) => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleViewFeedback = async (feedbackId, index) => {
     localStorage.setItem("candidateIdForFeedback", feedbackId);

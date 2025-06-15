@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
-import { links } from "routes/routes";
+import { links } from "./routes/routes";
 import { NavLink, useLocation } from "react-router-dom";
 import "./styles.scss";
 import AdminActivities from "./AdminActivities"
