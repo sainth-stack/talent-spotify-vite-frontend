@@ -1,20 +1,57 @@
-import React from 'react';
-import "./styles.scss"
-import CheckboxInput from '../CheckboxInput';
-import useWindowSize from 'components/UseWindowSize';
+import React from "react";
+import "./styles.scss";
+import CheckboxInput from "../CheckboxInput";
+import useWindowSize from "../../../components/UseWindowSize";
 
-export default function SelectInputIconStatus({ label = "", placeholder = "", options = [], name = "", value = "", onChangeText, style3, style, checkboxOptions, icon, ...rest }) {
+export default function SelectInputIconStatus({
+  label = "",
+  placeholder = "",
+  options = [],
+  name = "",
+  value = "",
+  onChangeText,
+  style3,
+  style,
+  checkboxOptions,
+  icon,
+  ...rest
+}) {
   const isMobile = useWindowSize();
   return (
     <div className="dropdown ">
-      <button className={`btn dropdown-toggle create-btn bg-green text-white dropdown-none text-capitalize SelectButton ${isMobile ? "p-0 m-0" : "mt-2 m-2"} fs16 w-100`} type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <img src={icon} alt="eye" className='mr-1 status-icon' style={{ backgroundColor: "white", borderRadius: "50%", padding: "1px" }} />
+      <button
+        className={`btn dropdown-toggle create-btn bg-green text-white dropdown-none text-capitalize SelectButton ${
+          isMobile ? "p-0 m-0" : "mt-2 m-2"
+        } fs16 w-100`}
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <img
+          src={icon}
+          alt="eye"
+          className="mr-1 status-icon"
+          style={{
+            backgroundColor: "white",
+            borderRadius: "50%",
+            padding: "1px",
+          }}
+        />
         {isMobile ? "" : placeholder}
       </button>
       <div className="dropdown-menu p-2" aria-labelledby="dropdownMenuButton">
-        {checkboxOptions.length > 0 && checkboxOptions.map((checkbox, index) => (
-          <CheckboxInput label={checkbox.label} name={checkbox.name} key={index} onChangeText={checkbox.onChangeText} value={checkbox.value} />
-        ))}
+        {checkboxOptions.length > 0 &&
+          checkboxOptions.map((checkbox, index) => (
+            <CheckboxInput
+              label={checkbox.label}
+              name={checkbox.name}
+              key={index}
+              onChangeText={checkbox.onChangeText}
+              value={checkbox.value}
+            />
+          ))}
         {/*<button className="dropdown-item text-capitalize fs16 bg-success text-white text-center" onClick={onChangeText}>Apply</button>*/}
       </div>
     </div>
@@ -27,5 +64,5 @@ export default function SelectInputIconStatus({ label = "", placeholder = "", op
     //    ))}
     //  </select>
     //</div>
-  )
+  );
 }

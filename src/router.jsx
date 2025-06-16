@@ -1,4 +1,3 @@
-// src/router.jsx
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -11,110 +10,127 @@ import { createBrowserRouter } from "react-router-dom";
 import RecruitmentManagement from "./pages/vihanga/pages/Recruitment";
 import ApplyforLeave from "./pages/vihanga/pages/employeePortal/absencetimeoff/applyforLeave";
 import NotFoundPage from "./NotFoundPage";
-import CandidateCreate from './pages/vihanga/pages/Recruitment/sections/candidateDetails/index';
-import WeeklyLeaveManagement from './pages/vihanga/pages/employeePortal/WeeklyTime/index';
+import CandidateCreate from "./pages/vihanga/pages/Recruitment/sections/candidateDetails/index";
+import WeeklyLeaveManagement from "./pages/vihanga/pages/employeePortal/WeeklyTime/index";
 import CalendarPage from "./pages/vihanga/pages/employeePortal/TeamLeave";
 import TimeSheetHistory from "./pages/vihanga/pages/employeePortal/TimeTracking/timeSheetHistiory";
 import LeaveType from "./pages/vihanga/pages/AdminPortal/LeaveType";
 import EligibilityCriteria from "./pages/vihanga/pages/AdminPortal/EligibilityCriteria";
+import KeyResults1 from "./pages/vihanga/pages/keyResults";
+import Tasks from "./pages/vihanga/pages/Tasks/table";
 
 // Auth Pages (example)
 
-const router = createBrowserRouter([
-  // Auth routes
+const router = createBrowserRouter(
+  [
+    // Auth routes
+    {
+      path: "/auth",
+      // element: <AuthLayout />,
+      children: [
+        {
+          path: "login",
+          element: (
+            <div
+              style={{
+                padding: "2rem",
+                fontSize: "1.25rem",
+                textAlign: "center",
+              }}
+            >
+              🔒 This is an auth Layout.
+            </div>
+          ),
+        },
+      ],
+    },
+
+    // Admin routes
+    {
+      path: "/admin",
+      // element: <AdminLayout />,
+      children: [
+        {
+          path: "recruitment",
+          element: <RecruitmentManagement />,
+        },
+        {
+          path: "recruitment/candidate/create",
+          element: <CandidateCreate />,
+        },
+        {
+          path: "recruitment/candidate/create/:candidateId",
+          element: <CandidateCreate />,
+        },
+        {
+          path: "recruitment/keyresult",
+          element: <KeyResults1 />,
+        },
+        {
+          path: "recruitment/task",
+          element: <Tasks />,
+        },
+        {
+          path: "previlages/apply-leave",
+          element: <ApplyforLeave />,
+        },
+        {
+          path: "previlages/time-tracking",
+          element: <WeeklyLeaveManagement />,
+        },
+        {
+          path: "previlages/team-leave",
+          element: <CalendarPage />,
+        },
+        {
+          path: "previlages/time-history",
+          element: <TimeSheetHistory />,
+        },
+        {
+          path: "previlages/leave-type",
+          element: <LeaveType />,
+        },
+        {
+          path: "previlages/eligibility",
+          element: <EligibilityCriteria />,
+        },
+      ],
+    },
+
+    // Candidate or Employee routes
+    {
+      path: "/candidate",
+      // element: <CandidateLayout />,
+      children: [
+        {
+          path: "apply-leave",
+          element: (
+            <div
+              style={{
+                padding: "2rem",
+                fontSize: "1.25rem",
+                textAlign: "center",
+              }}
+            >
+              🔒 This is an Candidate Layout.
+            </div>
+          ),
+        },
+        // Add more employee/candidate routes here
+      ],
+    },
+
+    // Catch-all 404 route
+    {
+      path: "*",
+      element: <NotFoundPage />,
+    },
+  ],
   {
-    path: "/auth",
-    // element: <AuthLayout />,
-    children: [
-      {
-        path: "login",
-        element: <div style={{ padding: "2rem", fontSize: "1.25rem", textAlign: "center" }}>
-        🔒 This is an auth Layout.
-      </div>
-      }
-    ]
-  },
-
-  // Admin routes
-  {
-    path: "/admin",
-    // element: <AdminLayout />,
-    children: [
-      {
-        path: "recruitment",
-        element: <RecruitmentManagement />
-      },
-      {
-        path: "recruitment/candidate/create",
-        element: <CandidateCreate />
-      },
-      {
-        path: "recruitment/candidate/create/:candidateId", 
-        element: <CandidateCreate />
-      },
-      {
-        path: "previlages/apply-leave",
-        element: <ApplyforLeave />
-
-       
-      },
-      {
-        path: "previlages/time-tracking",
-        element: <WeeklyLeaveManagement />
-
-
-      },
-      {
-        path: "previlages/team-leave",
-        element: <CalendarPage />
-
-
-      },
-      {
-        path: "previlages/time-history",
-        element: <TimeSheetHistory />
-
-
-      },
-      {
-        path: "previlages/leave-type",
-        element: <LeaveType />
-
-
-      },
-      {
-        path: "previlages/eligibility",
-        element: <EligibilityCriteria />
-
-
-      },
-      
-      
-      
-      // Add more admin child routes here
-    ]
-  },
-
-  // Candidate or Employee routes
-  {
-    path: "/candidate",
-    // element: <CandidateLayout />,
-    children: [
-      {
-        path: "apply-leave",
-        element: <div style={{ padding: "2rem", fontSize: "1.25rem", textAlign: "center" }}>
-        🔒 This is an Candidate Layout.
-      </div>
-      }
-      // Add more employee/candidate routes here
-    ]
-  },
-
-  // Catch-all 404 route
-  {
-    path: "*",
-    element: <NotFoundPage />
+    future: {
+      v7_startTransition: true, // ✅ suppresses the warning and prepares for v7
+    },
   }
-]);
+);
 
 export default router;
