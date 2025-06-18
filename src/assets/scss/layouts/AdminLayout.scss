@@ -1,4 +1,5 @@
-@import "../abstracts/abstracts";
+@use "../abstracts/abstracts" as *;
+
 
 #main-content {
   .content-wrapper {

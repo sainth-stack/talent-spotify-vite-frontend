@@ -1,4 +1,5 @@
-@import "../abstracts/abstracts";
+@use "../abstracts/abstracts" as *;
+
 .primary-color {
   color: $primary-color;
   &-dark {

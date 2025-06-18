@@ -1,7 +1,6 @@
-import useWindowSize from "components/UseWindowSize";
+import useWindowSize from "../../../components/UseWindowSize";
 import React from "react";
 import Select from "react-select";
-import "./styles.scss";
 
 export default function SelectInput({
   label = "",

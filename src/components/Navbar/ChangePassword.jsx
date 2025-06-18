@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Col, Modal, Row } from "react-bootstrap";
-import wrong from "assets/svg/wrong.svg";
+import wrong from "../../assets/svg/wrong.svg";
 import { LoadingIndicator, Validator } from "utilities";
-import SelectInput from "components/Company/SelectInput";
-import Button from "components/Company/Button";
-import useWindowSize from "components/UseWindowSize";
-import TextInput from "components/Company/TextInput";
-import { Toast } from "service/toast";
+import SelectInput from "../../components/Company/SelectInput";
+import Button from "../../components/Company/Button";
+import useWindowSize from "../../components/UseWindowSize";
+import TextInput from "../../components/Company/TextInput";
+import { Toast } from "../../service/toast";
 
 export default function ChangePassword(props) {
   const [selectedUser, setSelectedUser] = useState("");

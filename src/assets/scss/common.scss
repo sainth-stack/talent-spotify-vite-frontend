@@ -1,4 +1,5 @@
-@import "../scss/abstracts/abstracts";
+@use "../scss/abstracts/abstracts" as *;
+
 
 .heading-20 {
   font-family: Poppins;

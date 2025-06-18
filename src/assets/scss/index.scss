@@ -1,19 +1,25 @@
-@import "./default/default.scss";
-@import "./default/utility.scss";
-@import "./vendors/vendors-dir.scss";
-@import "./auth/login.scss";
-@import "./icons/style.css";
-@import "./common.scss";
-@import "./layouts/mobile.scss";
+@use './abstracts/variables' as *;
+
+@use "./abstracts/mixins" as *;
+@use "./abstracts/functions" as *;
+
+@use "./default/default.scss" as *;
+@use "./default/utility.scss" as *;
+@use "./vendors/vendors-dir.scss" as *;
+@use "./auth/login.scss" as *;
+@use "./common.scss" as *;
+@use "./layouts/mobile.scss" as *;
+
 
 @font-face {
   font-family: Poppins;
-  src: url(../fonts/Poppins/Poppins-Regular.ttf);
+  src: url('/fonts/Poppins/Poppins-Regular.ttf');
 }
 
 @font-face {
   font-family: Poppins-regular;
-  src: url(../fonts/Poppins/Poppins-Regular.ttf);
+  src: url('/fonts/Poppins/Poppins-Regular.ttf');
+
 }
 
 @font-face {

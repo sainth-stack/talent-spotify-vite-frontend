@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 
 // Layouts
-// import { AdminLayout } from "./layout/AdminLayout";
+import { AdminLayout } from "./layout/AdminLayout";
 // import { AuthLayout } from "./layout/AuthLayout";
 // import { CandidateLayout } from "./layout/CandidateLayout";
 
@@ -16,8 +16,8 @@ import CalendarPage from "./pages/vihanga/pages/employeePortal/TeamLeave";
 import TimeSheetHistory from "./pages/vihanga/pages/employeePortal/TimeTracking/timeSheetHistiory";
 import LeaveType from "./pages/vihanga/pages/AdminPortal/LeaveType";
 import EligibilityCriteria from "./pages/vihanga/pages/AdminPortal/EligibilityCriteria";
-import KeyResults1 from "./pages/vihanga/pages/keyResults";
-import Tasks from "./pages/vihanga/pages/Tasks/table";
+import Login from "./pages/Auth/Login";
+
 
 // Auth Pages (example)
 
@@ -30,17 +30,7 @@ const router = createBrowserRouter(
       children: [
         {
           path: "login",
-          element: (
-            <div
-              style={{
-                padding: "2rem",
-                fontSize: "1.25rem",
-                textAlign: "center",
-              }}
-            >
-              🔒 This is an auth Layout.
-            </div>
-          ),
+          element: <Login/>
         },
       ],
     },
@@ -48,7 +38,7 @@ const router = createBrowserRouter(
     // Admin routes
     {
       path: "/admin",
-      // element: <AdminLayout />,
+       element: <AdminLayout />,
       children: [
         {
           path: "recruitment",
@@ -62,14 +52,7 @@ const router = createBrowserRouter(
           path: "recruitment/candidate/create/:candidateId",
           element: <CandidateCreate />,
         },
-        {
-          path: "recruitment/keyresult",
-          element: <KeyResults1 />,
-        },
-        {
-          path: "recruitment/task",
-          element: <Tasks />,
-        },
+      
         {
           path: "previlages/apply-leave",
           element: <ApplyforLeave />,

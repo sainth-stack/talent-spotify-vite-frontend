@@ -7,7 +7,6 @@ import appLogo1 from "../../assets/images/AppNewLogo.png";
 import logo2 from "../../assets/images/AppNewLogo.png";
 
 import { useTranslation } from 'react-i18next'
-import NewTopHeader from 'components/Navbar/newTopHeader';
 
 export default function Logo({ logoImg = "1" }) {
   const {t} = useTranslation()

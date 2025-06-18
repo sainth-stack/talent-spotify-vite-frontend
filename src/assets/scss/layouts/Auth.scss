@@ -1,4 +1,5 @@
-@import "../abstracts/abstracts";
+@use "../abstracts/abstracts" as *;
+
 
 .auth-layout {
   background-color: $primary-bg;

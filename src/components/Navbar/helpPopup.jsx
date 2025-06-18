@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
-import wrong from "assets/svg/wrong.svg";
+import wrong from "../../assets/svg/wrong.svg";
 import { Modal } from "react-bootstrap";
-import useWindowSize from "components/UseWindowSize";
-import SelectInput from "components/Company/SelectInput";
+import useWindowSize from "../../components/UseWindowSize";
+import SelectInput from "../../components/Company/SelectInput";
 import paginationFactory from "react-bootstrap-table2-paginator";
-import TableNormal from "components/TableNormal";
-import ArrowOrderComponent from "../../pages/Objectives/ObjectivesTable/ArrowOrderComponent";
+import TableNormal from "../../components/TableNormal";
+
 import { getRandom } from "utilities";
 import { useDispatch } from "react-redux";
 import {

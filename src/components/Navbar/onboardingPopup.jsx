@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from "react";
-import wrong from "assets/svg/wrong.svg";
+import wrong from "../../assets/svg/wrong.svg";
 import { Modal } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
 import { questionData, HRAdminData, ManagerData } from "utilities";
+import { useNavigate } from "react-router-dom";
 const OnBoarding = (props) => {
-  const history = useHistory()
+  const navigate = useNavigate()
   const [, setHover] = useState(false)
   const user = JSON.parse(localStorage.getItem('user'))
   const [questioinSelect, setQuestionSelect] = useState([])
   const handleClick = (childData, action) => {
     localStorage.setItem("showObjTour", true);
     props.onHide()
-    history.push
-      ({
-        pathname: '/admin/' + `${childData}`,
-        state: { isVisible: true, story: action }
-      })
+    navigate(`/admin/${childData}`, {
+      state: { isVisible: true, story: action }
+    });
+    
 
   }
   const getData = () => {

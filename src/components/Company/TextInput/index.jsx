@@ -1,7 +1,6 @@
-import useWindowSize from "components/UseWindowSize";
+import useWindowSize from "../../../components/UseWindowSize";
 import React from "react";
 import { countries } from "utilities";
-import "./styles.scss";
 
 export default function TextInput({
   label = "",

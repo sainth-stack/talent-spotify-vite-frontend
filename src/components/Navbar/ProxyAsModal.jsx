@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Col, Modal, Row } from "react-bootstrap";
-import wrong from "assets/svg/wrong.svg";
+import wrong from "../../assets/svg/wrong.svg";
 import {
   AuthUserRole,
   AuthUserRoleId,
   LoadingIndicator,
   Validator,
 } from "utilities";
-import SelectInput from "components/Company/SelectInput";
-import Button from "components/Company/Button";
-import useWindowSize from "components/UseWindowSize";
+import SelectInput from "../../components/Company/SelectInput";
+import Button from "../../components/Company/Button";
+import useWindowSize from "../../components/UseWindowSize";
 
 export default function ProxyAsModal(props) {
   const [selectedUser, setSelectedUser] = useState("");

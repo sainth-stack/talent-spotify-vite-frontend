@@ -1,0 +1,124 @@
+@import '../../../assets/scss/abstracts/abstracts';
+.react-bootstrap-table td,
+.react-bootstrap-table th {
+  word-break: break-all;
+  font-size:12px;
+}
+.react-bootstrap-table thead{
+  background-color: rgba(42, 137, 129, 0.17);
+}
+
+.company-form{
+  background-color: #FCFCFC;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+  padding:56px 52px;
+}
+.green-heading{
+  color:#2A8981;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  padding-bottom:22px!important;
+}
+
+.upArrow{
+  position: relative;
+  top:-3px;
+  left:7px;
+}
+
+.downArrow{
+  position: relative;
+  top:4px;
+}
+.arrowActive{
+  color:#000000;
+}
+.arrowInActive{
+  color:rgba(0, 0, 0, 0.3);
+}
+.bg-green{
+  background-color: #2A8981;
+}
+.mh-100{
+  min-height: 100vh;
+}
+.location{
+  margin-right: 235px;
+}
+.save-add{
+  margin-right: 60px;
+}
+.react-bootstrap-table{
+  margin-top: 30px;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+}
+.addEmployee{
+    background-color: #2A8981;
+    border-radius: 84px;
+    height: 43px;
+    width: 205px;
+    line-height: 43px;
+    color: #ffffff;
+}
+.search-field{
+  display: flex;
+  justify-content: space-between;
+}
+.search-box{
+  // width: 240px;
+  height: 40px;
+  background-color: #F5F5F6;
+  border-color: #F5F5F6;
+  border-radius: 120px;
+  margin-left: 0px;
+  width: 200px;
+  margin-right: 200px;
+}
+.action{
+  position: relative;
+  left:15px;
+  top:38px;
+}
+.search-icon-container{
+  position: relative;
+}
+.search-icon{
+  position: relative;
+  top:8px;
+  left:40px;
+  height: 0px;
+  z-index: 9999;
+}
+.actionDropdown .dropdown-toggle:after { content: none }
+.searchInput{
+  outline: none!important;
+  font: 12px !important;
+  width:90%;
+}
+.circle{
+  border-radius: 100px!important;
+}
+.profilelogo{
+  width:100px;
+  height:100px;
+  border-radius: 100px;
+}
+.p-relative{
+  position: relative;
+}
+.editpencil{
+  position:absolute;
+  top:-35px;
+  left:60px;
+  background-color: white;
+  width:30px;
+  height:30px;
+  padding-top: 5px;
+  text-align: center;
+  border-radius: 100px;
+  border:1px solid black;
+}

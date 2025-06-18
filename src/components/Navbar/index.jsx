@@ -1,39 +1,37 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { links } from "routes/routes";
-import { NavLink, Link, useHistory } from "react-router-dom";
-import "./styles.scss";
+import { sidebarRoutes } from "../../layout/AppRoutes";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import search from '../../assets/svg/search.svg'
 import notification from '../../assets/svg/notification.svg'
 import help from '../../assets/svg/help.svg'
 import userprofile from '../../assets/images/userprofile.png'
-import Logo from "components/Logo";
-import { getAllNotifications, getAllNotificationsByUser, getAllNotificationsCount } from "action/NotificationAct";
-import { getPrivilege } from "action/PrivilegesAct";
-import { getNavBarDatas } from "action/NavBarSearchAct";
-import ProxyAsModal from "./ProxyAsModal";
-import { changePassword, getEmployees, updateEmployee } from "action/EmployeeAct";
-import useWindowSize from "components/UseWindowSize";
+import Logo from "../../components/Logo";
+import { getAllNotifications, getAllNotificationsByUser, getAllNotificationsCount } from "../../action/NotificationAct";
+import { getPrivilege } from "../../action/PrivilegesAct";
+import { getNavBarDatas } from "../../action/NavBarSearchAct";
+import { changePassword, getEmployees, updateEmployee } from "../../action/EmployeeAct";
+import useWindowSize from "../../components/UseWindowSize";
 import { AuthUserId, getRandom, LoadingIndicator, handleLink } from "utilities";
 import emp from '../../assets/svg/employees.svg'
 import obj from '../../assets/svg/objective.svg'
 import keyres from '../../assets/svg/child.svg'
 import tasksi from '../../assets/svg/tasks.svg'
-import TasksView from "pages/Objectives/TasksView";
 import OnBoarding from "./onboardingPopup";
-import HelpPopup from './helpPopup';
+// import HelpPopup from './helpPopup';
 import ChangePassword from "./ChangePassword";
-import { Toast } from "service/toast";
+import { Toast } from "../../service/toast";
 import LanguageSelector from "./languageSelector";
 import { useTranslation } from 'react-i18next';
 import NewTopHeader from "./newTopHeader";
+import ProxyAsModal from './ProxyAsModal';
 function SearchBar({ objectivesData, setTaskData, setViewModalTask, getNavBarDatas1, handlecallback }) {
   const [searchStart, setSearchStart] = useState(false)
   const [value, setValue] = useState('')
   const [filterData3, setFilterData3] = useState([])
   const {t} = useTranslation()
-  let history = useHistory();
+  let navigate = useNavigate();
   const handleChange1 = (e) => {
     setSearchStart(true)
     setValue(e.target.value)
@@ -46,24 +44,29 @@ function SearchBar({ objectivesData, setTaskData, setViewModalTask, getNavBarDat
     setValue('')
     setSearchStart(false)
     if (item.label == 'keyResult') {
-      history.push({
-        pathname: "/admin/objectives/okrdetails",
-        state: { data: { objective: item.data.okrName, objectiveId: item.data.objectiveId, ...item.data, keyId: item.data._id } }
-      })
+      navigate("/admin/objectives/okrdetails", {
+        state: {
+          data: {
+            objective: item?.data?.okrName,
+            objectiveId: item?.data?.objectiveId,
+            ...item?.data,
+            keyId: item?.data?._id
+          }
+        }
+      });
     }
     else if (item.label == 'task') {
       setTaskData(item.data)
       setViewModalTask(true)
     }
     else if (item.label == 'employee') {
-      history.push({
-        pathname: "/admin/setups/employeeEdit",
+      navigate("/admin/setups/employeeEdit", {
         state: { data: { ...item.data } }
-      })
+      });
     }
     else {
-      history.push({
-        pathname: "/admin/objectives/okrdetails",
+
+      navigate("/admin/objectives/okrdetails", {
         state: {
           data: {
             ...item.data,
@@ -71,7 +74,9 @@ function SearchBar({ objectivesData, setTaskData, setViewModalTask, getNavBarDat
             // ownerName: "companyInfo",
           },
         },
-      })
+      });
+      
+      
     }
   }
   useEffect(() => {
@@ -143,7 +148,7 @@ function Navbar() {
   const [orderModalShow5, setOrderModalShow5] = useState(false);
   const [orderModalShow6, setOrderModalShow6] = useState(false);
   const [changePass, setChangePasswordModal] = useState(false)
-  const history = useHistory()
+  const navigate = useNavigate()
   let user = localStorage.getItem("user") !== null ? JSON.parse(localStorage.getItem("user")) : null;
   const dispatch = useDispatch();
   const { t } = useTranslation();
@@ -412,21 +417,21 @@ function Navbar() {
   const handleCallback4 = (childData) => {
     if (childData) {
       if (childData === 'How To Create Objective ?') {
-        history.push
-          ({
-            pathname: '/admin/objectives',
-            state: { isVisible: true }
-          })
+        navigate('/admin/objectives', {
+          state: { isVisible: true }
+        });
+        
       }
       else if (childData === 'How To Create Task ?') {
-        history.push
-          ({
-            pathname: '/admin/tasks',
-            state: { isVisible: true }
-          })
+
+        navigate('/admin/tasks', {
+          state: { isVisible: true }
+        });
+        
       }
+
       else {
-        history.push('/admin/keyResults')
+       navigate('/admin/keyResults')
       }
     }
   }
@@ -510,9 +515,9 @@ function Navbar() {
                       selectedTab.tab === "myteam" ? "activeLink" : ""
                     } cursor-pointer`}
                   >
-                    {user.role === "Manager" || user.role === "Super Admin"
+                    {/* {user.role === "Manager" || user.role === "Super Admin"
                       ? t("Navbar.myteam")
-                      : t("Navbar.mycompany")}
+                      : t("Navbar.mycompany")} */}
                   </div>
                 </div>
               )}
@@ -753,8 +758,8 @@ function Navbar() {
           <ul className="sidebar-list-items pl-3 d-lg-none d-md-block">
             {privileges &&
               privileges.length > 0 &&
-              links().length > 0 &&
-              links().map(({ icon, title, link }, index) => (
+              sidebarRoutes().length > 0 &&
+              sidebarRoutes().map(({ icon, title, link }, index) => (
                 <NavLink
                   to={link}
                   className="text-black text-decoration-none"
@@ -799,12 +804,12 @@ function Navbar() {
           )}
         </div>
         {viewModalTasks && (
-          <TasksView
+          {/* <TasksView
             show={viewModalTasks}
             onHide={() => setViewModalTask(false)}
             data={taskData}
             // owner={props.ownerDet}
-          />
+          /> */}
         )}
         {showSearch && <SearchBar />}
       </nav>
@@ -813,11 +818,11 @@ function Navbar() {
         onHide={() => setOrderModalShow5(false)}
         handlecallback={handleCallback4}
       />
-      <HelpPopup
+      {/* <HelpPopup
         show={orderModalShow6}
         onHide={() => setOrderModalShow6(false)}
         handlecallback={handleCallback4}
-      />
+      /> */}
 
       {/* <NewTopHeader /> */}
     </>
